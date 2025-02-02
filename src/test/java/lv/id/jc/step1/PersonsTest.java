@@ -10,7 +10,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class PersonsTest {
 
     /*
-        We need to test that:
         - the name is John
         - the date of birth is 3rd May 1990
         - the John has two friends
@@ -19,10 +18,10 @@ class PersonsTest {
     @Test
     void getJohn() {
         // Arrange
-        var friends = new Persons();
+        var persons = new Persons();
 
         // Act
-        var john = friends.getJohn();
+        var john = persons.getJohn();
 
         // Assert
         assertThat(john)
