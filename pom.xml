@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
         <groovy.version>4.0.7</groovy.version>
 
         <!-- Test Frameworks -->
@@ -32,6 +32,15 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
+        </dependency>
+        <!-- Spock Framework -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
         </dependency>
     </dependencies>
 
@@ -95,34 +104,50 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!-- Mandatory plugins for using Spock -->
                 <plugin>
+                    <!-- The gmavenplus plugin is used to compile Groovy code. -->
+                    <!-- To learn more visit https://github.com/groovy/GMavenPlus/wiki -->
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>2.1.0</version>
+                    <version>4.1.1</version>
                     <executions>
                         <execution>
                             <goals>
+                                <goal>compile</goal>
+                                <goal>compileTests</goal>
                                 <goal>addSources</goal>
                                 <goal>addTestSources</goal>
                                 <goal>generateStubs</goal>
-                                <goal>compile</goal>
                                 <goal>generateTestStubs</goal>
-                                <goal>compileTests</goal>
                                 <goal>removeStubs</goal>
                                 <goal>removeTestStubs</goal>
                             </goals>
                         </execution>
                     </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.groovy</groupId>
-                            <artifactId>groovy</artifactId>
-                            <version>${groovy.version}</version>
-                            <scope>runtime</scope>
-                        </dependency>
-                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+
     </build>
 </project>

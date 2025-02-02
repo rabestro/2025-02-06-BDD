@@ -3,7 +3,7 @@ package lv.id.jc.step1;
 import java.time.LocalDate;
 import java.util.Set;
 
-public class Friends {
+public class Persons {
     static Person Arthur = new Person("Arthur", LocalDate.of(1989, 1, 31), Set.of());
     static Person Mary = new Person("Mary", LocalDate.of(2001, 7, 15), Set.of(Arthur));
 

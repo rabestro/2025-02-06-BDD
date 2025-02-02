@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class FriendsTest {
+class PersonsTest {
 
     /*
         We need to test that:
@@ -19,7 +19,7 @@ class FriendsTest {
     @Test
     void getJohn() {
         // Arrange
-        var friends = new Friends();
+        var friends = new Persons();
 
         // Act
         var john = friends.getJohn();
