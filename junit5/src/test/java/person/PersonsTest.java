@@ -3,6 +3,7 @@ package person;
 import lv.id.jc.person.Person;
 import lv.id.jc.person.Persons;
 import org.assertj.core.api.InstanceOfAssertFactories;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -18,6 +19,7 @@ class PersonsTest {
         - Mary among the friends of John
      */
     @Test
+    @DisplayName("should retrieve John with correct details")
     void getJohn() {
         // Arrange
         var persons = new Persons();

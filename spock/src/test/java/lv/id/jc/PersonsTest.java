@@ -1,5 +1,7 @@
-package lv.id.jc.person;
+package lv.id.jc;
 
+import lv.id.jc.person.Person;
+import lv.id.jc.person.Persons;
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
 
