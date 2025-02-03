@@ -1,4 +1,4 @@
-package lv.id.jc.step1;
+package lv.id.jc.person;
 
 import java.time.LocalDate;
 import java.util.Set;

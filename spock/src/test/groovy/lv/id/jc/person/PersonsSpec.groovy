@@ -1,10 +1,10 @@
-package lv.id.jc.step1
+package lv.id.jc.person
 
 import spock.lang.Specification
 
 class PersonsSpec extends Specification {
 
-    def "GetJohn"() {
+    def "should retrieve John with correct details"() {
         given:
         def persons = new Persons()
 

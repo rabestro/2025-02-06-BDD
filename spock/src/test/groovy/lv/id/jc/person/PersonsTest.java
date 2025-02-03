@@ -1,4 +1,4 @@
-package lv.id.jc.step1;
+package lv.id.jc.person;
 
 import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
