@@ -7,9 +7,7 @@ import spock.lang.Subject
 class LegalAgeSpec extends Specification {
 
     @Subject
-    def sut = new Object() {
-        boolean isLegalAge(int age) { true }
-    }
+    def sut = new PersonServiceImpl()
 
     @PendingFeature(reason = 'Planned in release 0.2')
     def 'determines whether the age is legal age'() {

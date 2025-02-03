@@ -9,9 +9,7 @@ import java.time.LocalDate
 class AgeCalculationSpec extends Specification {
 
     @Subject
-    def sut = new Object() {
-        int age(Person person, LocalDate today) { 18 }
-    }
+    def sut = new PersonServiceImpl()
 
     @PendingFeature(reason = 'Scheduled in release 0.2')
     def "calculate the age: #comment"() {
